@@ -1,0 +1,18 @@
+
+- hosts: deployer
+  tasks:
+    - name: Copy indexfile
+      synchronize:
+         src: /opt/splunk/etc/system/local/indexes.conf
+         dest: /opt/splunk/etc/master-apps/local/
+      become: yes
+      become_user: root
+      ignore_errors: yes
+
+    - name: Check Splunk service.
+      command:
+        /opt/splunk/bin/splunk apply cluster-bundle
+      become: yes
+      become_user: root
+      ignore_errors: yes
+

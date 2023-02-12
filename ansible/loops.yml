@@ -1,0 +1,13 @@
+--- #my first yml file
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+         - name: install httpd
+           user: name='{{item}}' state=present
+           with_items:
+                   - solo
+                   - shubham
+                   - gudalo
+

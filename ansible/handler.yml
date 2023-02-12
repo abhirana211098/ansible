@@ -1,0 +1,12 @@
+--- #my first yml file
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks: 
+         - name: install httpd
+           action: yum name=httpd state=present
+           notify: restart httpd
+  handlers:
+         - name: restart httpd
+           action: aervice name=httpd state=restarted
