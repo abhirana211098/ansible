@@ -1,0 +1,7 @@
+- hosts: deployer
+  tasks:
+     - name: splunk restart (last stage)
+       become: yes
+       become_user: root
+       command:
+             cmd: /opt/splunk/bin/splunk restart
