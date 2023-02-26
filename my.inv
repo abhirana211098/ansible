@@ -1,1 +1,1 @@
-deployer ansible_host=3.110.154.214 ansible_connection=ssh ansible_user=ec2-user
+deployer ansible_host=52.66.11.123 ansible_connection=ssh ansible_user=ec2-user
