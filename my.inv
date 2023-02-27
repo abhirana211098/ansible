@@ -1,2 +1,0 @@
-[deployer] 
-3.110.119.242 ansible_connection=ssh ansible_user=ec2-user
