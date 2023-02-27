@@ -1,4 +1,4 @@
-- hosts: deployer
+- hosts: deployer1
   tasks:
 
      - name: Downloading splunk
