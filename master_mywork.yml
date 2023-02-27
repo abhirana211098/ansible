@@ -1,4 +1,4 @@
-- hosts: deployer1
+- hosts: solo
   tasks:
      - name: splunk restart for save password properly
        become: yes
