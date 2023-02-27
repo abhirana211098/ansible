@@ -1,0 +1,7 @@
+- hosts: deployer1
+  tasks:
+     - name: splunk restart for save password properly
+       become: yes
+       become_user: root
+       command:
+             cmd: /opt/splunk/bin/splunk edit cluster config -mode master -replication_factor 2 -search factor 2 -secret 12345678 -cluster_label my_cluster
