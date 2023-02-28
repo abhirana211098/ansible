@@ -1,0 +1,2 @@
+[solo1] 
+solo2 ansible_host=3.108.42.69 ansible_connection=ssh ansible_user=ec2-use
