@@ -1,1 +1,0 @@
-solo ansible_host=13.233.104.188 ansible_connection=ssh ansible_user=ec2-use
