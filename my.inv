@@ -1,4 +1,2 @@
 [deployer1] 
-deployer1_a1 ansible_host=13.233.104.188 ansible_connection=ssh ansible_user=ec2-user
-deployer1_a2 ansible_host=65.0.71.221 ansible_connection=ssh ansible_user=ec2-user
-deployer1_a3 ansible_host=3.110.50.37 ansible_connection=ssh ansible_user=ec2-user
+deployer1_a1 ansible_host=13.232.41.157 ansible_connection=ssh ansible_user=ec2-user
