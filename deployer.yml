@@ -3,11 +3,11 @@
      - name: Copy using inline content
        become: yes
        become_user: root    
-       copy:
-         dest: /opt/splunk/etc/system/local/server.conf
-         content: |
+       blockinfile:
+         path: /opt/splunk/etc/system/local/server.conf
+         block: |
             [shclustering]
-            pass4SymmKey = shubham123
+            pass4SymmKey = 12345678
             shcluster_label = cluster1
 
      - name: restart
