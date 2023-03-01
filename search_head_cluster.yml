@@ -4,7 +4,7 @@
        become: yes
        become_user: root
        ansible.builtin.copy:
-          content: |
+          content:|
               [shclustering]
               pass4SymmKey = 12345678
               shcluster_label = cluster1
