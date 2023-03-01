@@ -4,4 +4,15 @@
        become: yes
        become_user: root
        command:
-             cmd: /opt/splunk/bin/splunk stop
+             cmd: /opt/splunk/bin/splunk edit cluster-config -mode master -replication_factor 2 -search_factor 2 -secret 12345678 -cluster_label mycluster -auth admin:shubham123
+             
+     - name: pause
+       pause:
+          minutes: 1
+          
+     - name: splunk restart for save password properly
+       become: yes
+       become_user: root
+       command:
+             cmd: /opt/splunk/bin/splunk restart
+             
