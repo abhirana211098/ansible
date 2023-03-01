@@ -5,7 +5,7 @@
        become: yes
        become_user: root    
        copy:
-         path: /opt/splunk/etc/system/local/server.conf
+         dest: /opt/splunk/etc/system/local/server.conf
          content: |
             [shclustering]
             pass4SymmKey = shubham123
