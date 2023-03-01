@@ -9,8 +9,7 @@
        become: yes
        become_user: root
        command:
-             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.1.111.213:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$NM5E76CqgMlRoWJtIyv82dVqfoAeFm/1suuykAen02oKjbCIZ3BNgO8j
- -shcluster_label cluster1
+             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.1.111.213:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$NM5E76CqgMlRoWJtIyv82dVqfoAeFm/1suuykAen02oKjbCIZ3BNgO8j -shcluster_label cluster1
 
      - name: restart
        become: yes
@@ -25,8 +24,7 @@
        become: yes
        become_user: root
        command:
-             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.0.109.127:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$NM5E76CqgMlRoWJtIyv82dVqfoAeFm/1suuykAen02oKjbCIZ3BNgO8j
- -shcluster_label cluster1
+             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.0.109.127:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$NM5E76CqgMlRoWJtIyv82dVqfoAeFm/1suuykAen02oKjbCIZ3BNgO8j -shcluster_label cluster1
    
      - name: restart
        become: yes
@@ -41,8 +39,7 @@
        become: yes
        become_user: root
        command:
-             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://3.110.124.204:8089 -replication_port 9000 -replication_factor 2 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$NM5E76CqgMlRoWJtIyv82dVqfoAeFm/1suuykAen02oKjbCIZ3BNgO8j
- -shcluster_label cluster1
+             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://3.110.124.204:8089 -replication_port 9000 -replication_factor 2 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$NM5E76CqgMlRoWJtIyv82dVqfoAeFm/1suuykAen02oKjbCIZ3BNgO8j -shcluster_label cluster1
 
      - name: restart
        become: yes
