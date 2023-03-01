@@ -4,4 +4,4 @@
        become: yes
        become_user: root
        command:
-             cmd: /opt/splunk/bin/splunk restart
+             cmd: /opt/splunk/bin/splunk stop
