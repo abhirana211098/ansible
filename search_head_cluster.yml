@@ -27,11 +27,7 @@
        command:
              cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.1.111.213:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$qMGvUwmRmuC4awZ67C22tvV8HmnF1K9/MOL+QgLrGk3faXZuU0OzUgET -shcluster_label cluster1
 
-     - name: restart
-       become: yes
-       become_user: root
-       command:
-             cmd: /opt/splunk/bin/splunk restart
+
 
 
 - hosts: shcluster2
@@ -42,11 +38,6 @@
        command:
              cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.0.109.127:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$qMGvUwmRmuC4awZ67C22tvV8HmnF1K9/MOL+QgLrGk3faXZuU0OzUgET -shcluster_label cluster1
 
-     - name: restart
-       become: yes
-       become_user: root
-       command:
-             cmd: /opt/splunk/bin/splunk restart
 
 
 - hosts: shcluster3
@@ -57,11 +48,7 @@
        command:
              cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://3.110.124.204:8089 -replication_port 9000 -replication_factor 2 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$qMGvUwmRmuC4awZ67C22tvV8HmnF1K9/MOL+QgLrGk3faXZuU0OzUgET -shcluster_label cluster1
 
-     - name: restart
-       become: yes
-       become_user: root
-       command:
-             cmd: /opt/splunk/bin/splunk restart
+
 
      - name: configuration of index cluster and search head cluster
        become: yes
