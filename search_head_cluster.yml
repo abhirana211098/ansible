@@ -3,7 +3,7 @@
      - name: for deployer in search head clustering
        become: yes
        become_user: root
-       ansible.builtin.copy:
+       copy:
           content:|
               [shclustering]
               pass4SymmKey = 12345678
