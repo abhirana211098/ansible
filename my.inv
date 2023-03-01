@@ -15,11 +15,11 @@ s2 ansible_host=15.206.145.207 ansible_connection=ssh ansible_user=ec2-user
 d1 ansible_host=13.235.80.78 ansible_connection=ssh ansible_user=ec2-user
 
 [shcluster1]
-d1 ansible_host=13.235.80.78 ansible_connection=ssh ansible_user=ec2-user
+d1 ansible_host=65.1.111.213 ansible_connection=ssh ansible_user=ec2-user
 
-[depl]
-d1 ansible_host=13.235.80.78 ansible_connection=ssh ansible_user=ec2-user
+[shcluster2]
+d1 ansible_host=65.0.109.127 ansible_connection=ssh ansible_user=ec2-user
 
-[depl]
-d1 ansible_host=13.235.80.78 ansible_connection=ssh ansible_user=ec2-user
+[shcluster3]
+d1 ansible_host=3.110.124.204 ansible_connection=ssh ansible_user=ec2-user
 
