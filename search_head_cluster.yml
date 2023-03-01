@@ -6,9 +6,9 @@
        copy:
          dest: /opt/splunk/etc/system/local/server.conf
          content: |
-            - [shclustering]
-            - pass4SymmKey = yoursecuritykey
-            - shcluster_label = shcluster1
+            [shclustering]
+            pass4SymmKey = yoursecuritykey
+            shcluster_label = shcluster1
          
        
        
