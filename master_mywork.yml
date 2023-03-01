@@ -1,4 +1,4 @@
-- hosts: deployer123
+- hosts: master
   tasks:
      - name: splunk restart for save password properly
        become: yes
@@ -19,13 +19,13 @@
              
              
              
-- hosts: deployer123
+- hosts: slave
     tasks:
         - name: splunk restart for save password properly
           become: yes
           become_user: root
           command:
-             cmd: /opt/splunk/bin/splunk edit cluster-config -mode slave -master_uri https://"{{master}}":8089 -replication_port 8085 -secret 12345678 -auth admin:66546654 -auth admin:shubham123
+             cmd: /opt/splunk/bin/splunk edit cluster-config -mode slave -master_uri https://13.126.84.98:8089 -replication_port 8085 -secret 12345678 -auth admin:66546654 -auth admin:shubham123
              
         - name: pause
           pause:
