@@ -1,13 +1,9 @@
 - hosts: depl
   tasks:
-     - name: Update hosts
+     - name: Copy using inline content
        become: yes
        become_user: root
-       lineinfile:
-            path: /opt/splunk/etc/system/local/server.conf
-            line: "{{ item }}"
-       with_items:
-       - 
-       - [shclustering]
-       - pass4SymmKey = 12345678
-       - shcluster_label = cluster1
+       ansible.builtin.copy:
+          content: 
+              [shclustering]
+          dest: /opt/splunk/etc/system/local/server.conf
