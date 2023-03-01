@@ -1,1 +1,11 @@
-
+- hosts: depl
+  tasks:
+     - name: for deployer in search head clustering
+       become: yes
+       become_user: root
+       ansible.builtin.copy:
+          content: |
+              [shclustering]
+              pass4SymmKey = 12345678
+              shcluster_label = cluster1
+          dest: /opt/splunk/etc/system/local/server.conf
