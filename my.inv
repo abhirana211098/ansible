@@ -10,3 +10,7 @@ m1 ansible_host=13.126.84.98 ansible_connection=ssh ansible_user=ec2-user
 [slave]
 s1 ansible_host=65.1.86.180 ansible_connection=ssh ansible_user=ec2-user
 s2 ansible_host=15.206.145.207 ansible_connection=ssh ansible_user=ec2-user
+
+[depl]
+d1 ansible_host=13.235.80.78 ansible_connection=ssh ansible_user=ec2-user
+
