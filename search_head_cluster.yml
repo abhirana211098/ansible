@@ -4,8 +4,12 @@
        become: yes
        become_user: root    
        copy:
-       content: |
+         content: |
             - [shclustering]
             - pass4SymmKey = yoursecuritykey
             - shcluster_label = shcluster1
-       dest: /opt/splunk/etc/system/local/server.conf
+         dest: /opt/splunk/etc/system/local/server.conf
+       
+       
+    
+     
