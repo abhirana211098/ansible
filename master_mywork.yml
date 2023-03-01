@@ -17,7 +17,7 @@
              cmd: /opt/splunk/bin/splunk restart
            
 - hosts: slave
-    tasks:
+  tasks:
      - name: splunk restart for save password properly
        become: yes
        become_user: root
