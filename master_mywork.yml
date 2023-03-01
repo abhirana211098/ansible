@@ -18,7 +18,6 @@
            
 - hosts: slave
     tasks:
-       
      - name: splunk restart for save password properly
        become: yes
        become_user: root
