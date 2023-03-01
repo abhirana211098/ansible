@@ -4,9 +4,9 @@
      - name: Copy using inline content
        become: yes
        become_user: root    
-       blockinfile:
-         path: /opt/splunk/etc/system/local/server.conf
-         block: |
+       copy:
+         dest: /opt/splunk/etc/system/local/server.conf
+         content: |
             [shclustering]
             pass4SymmKey = 12345678
             shcluster_label = cluster1
