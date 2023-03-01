@@ -63,10 +63,6 @@
        command:
              cmd: /opt/splunk/bin/splunk restart
 
-     - name: pause
-       pause:
-          minutes: 1
-
      - name: configuration of index cluster and search head cluster
        become: yes
        become_user: root
