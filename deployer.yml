@@ -1,0 +1,17 @@
+- hosts: depl
+  tasks:
+     - name: Copy using inline content
+       become: yes
+       become_user: root    
+       copy:
+         dest: /opt/splunk/etc/system/local/server.conf
+         content: |
+            [shclustering]
+            pass4SymmKey = shubham123
+            shcluster_label = cluster1
+
+     - name: restart
+       become: yes
+       become_user: root
+       command:
+             cmd: /opt/splunk/bin/splunk restart
