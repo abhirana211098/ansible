@@ -5,13 +5,13 @@
 
   tasks:
     - name: restart splunkd
-      command: /opt/splunk/bin/./splunk restart
+      command: /opt/splunk/bin/splunk restart
       
     - name: configure search peer 
-      command: /opt/splunk/bin/./splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://15.206.209.236:8089 -replication_port 8084 -replication_factor 2 -conf_deploy_fetch_url https://13.233.117.35:8089 -secret $7$u3Ga72yrCMZydRLHcvCTEn30DXrZw6XllkoKOggrWLpzIpfgFkN85g== -shcluster_label shcluster1
+      command: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://15.206.209.236:8089 -replication_port 8084 -replication_factor 2 -conf_deploy_fetch_url https://13.233.117.35:8089 -secret $7$u3Ga72yrCMZydRLHcvCTEn30DXrZw6XllkoKOggrWLpzIpfgFkN85g== -shcluster_label shcluster1
 
     - name: restart splunk
-      command: /opt/splunk/bin/./splunk restart
+      command: /opt/splunk/bin/splunk restart
 
 - name: shc 2 
   hosts: shcluster2
@@ -20,13 +20,13 @@
 
   tasks:
     - name: restart splunk
-      command: /opt/splunk/bin/./splunk restart
+      command: /opt/splunk/bin/splunk restart
     
     - name: configure search peer 
-      command: /opt/splunk/bin/./splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://13.235.86.11:8089 -replication_port 8084 -replication_factor 2 -conf_deploy_fetch_url https://13.233.117.35:8089 -secret $7$u3Ga72yrCMZydRLHcvCTEn30DXrZw6XllkoKOggrWLpzIpfgFkN85g== -shcluster_label shcluster1
+      command: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://13.235.86.11:8089 -replication_port 8084 -replication_factor 2 -conf_deploy_fetch_url https://13.233.117.35:8089 -secret $7$u3Ga72yrCMZydRLHcvCTEn30DXrZw6XllkoKOggrWLpzIpfgFkN85g== -shcluster_label shcluster1
 
     - name: restart splunk
-      command: /opt/splunk/bin/./splunk restart
+      command: /opt/splunk/bin/splunk restart
     
 
 - name: shc 1 captain
@@ -36,5 +36,5 @@
 
   tasks:
     - name: cluster captain
-      command: /opt/splunk/bin/./splunk bootstrap shcluster-captain -servers_list "https://15.206.209.236:8089,https://13.235.86.11:8089" -auth admin:shubham123
+      command: /opt/splunk/bin/splunk bootstrap shcluster-captain -servers_list "https://15.206.209.236:8089,https://13.235.86.11:8089" -auth admin:shubham123
 
