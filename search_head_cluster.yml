@@ -1,6 +1,6 @@
 - name: shc1 
   hosts: shcluster1
-  user: root
+  become_user: root
   become: yes
 
   tasks:
@@ -15,7 +15,7 @@
 
 - name: shc 2 
   hosts: shcluster2
-  user: root
+  become_user: root
   become: yes
 
   tasks:
@@ -31,7 +31,7 @@
 
 - name: shc 1 captain
   hosts: shcluster1
-  user: root
+  become_user: root
   become: yes
 
   tasks:
