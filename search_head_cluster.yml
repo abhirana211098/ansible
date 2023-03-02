@@ -1,19 +1,40 @@
-- hosts: shcluster1
+- name: shc1 
+  hosts: shcluster1
+  user: root
+  become: yes
+
   tasks:
-     - name: search head 1
-       become: yes
-       become_user: root
-       command:
-             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.1.111.213:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$sOJb4+4Qf+nWzOuJW+OwzG0AEdi4cT42Z+dpm9KDg/cPB645dMi41g== -shcluster_label cluster1
+    - name: restart splunkd
+      command: /opt/splunk/bin/./splunk restart
+      
+    - name: configure search peer 
+      command: /opt/splunk/bin/./splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://15.206.209.236:8089 -replication_port 8084 -replication_factor 2 -conf_deploy_fetch_url https://13.233.117.35:8089 -secret $7$u3Ga72yrCMZydRLHcvCTEn30DXrZw6XllkoKOggrWLpzIpfgFkN85g== -shcluster_label shcluster1
 
+    - name: restart splunk
+      command: /opt/splunk/bin/./splunk restart
 
+- name: shc 2 
+  hosts: shcluster2
+  user: root
+  become: yes
 
-- hosts: shcluster2
   tasks:
-     - name: shcluster2
-       become: yes
-       become_user: root
-       command:
-             cmd: /opt/splunk/bin/splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://65.0.109.127:8089 -replication_port 9000 -replication_factor 3 -conf_deploy_fetch_url http://13.235.80.78:8089 -secret $7$sOJb4+4Qf+nWzOuJW+OwzG0AEdi4cT42Z+dpm9KDg/cPB645dMi41g== -shcluster_label cluster1
+    - name: restart splunk
+      command: /opt/splunk/bin/./splunk restart
+    
+    - name: configure search peer 
+      command: /opt/splunk/bin/./splunk init shcluster-config -auth admin:shubham123 -mgmt_uri https://13.235.86.11:8089 -replication_port 8084 -replication_factor 2 -conf_deploy_fetch_url https://13.233.117.35:8089 -secret $7$u3Ga72yrCMZydRLHcvCTEn30DXrZw6XllkoKOggrWLpzIpfgFkN85g== -shcluster_label shcluster1
 
+    - name: restart splunk
+      command: /opt/splunk/bin/./splunk restart
+    
+
+- name: shc 1 captain
+  hosts: shcluster1
+  user: root
+  become: yes
+
+  tasks:
+    - name: cluster captain
+      command: /opt/splunk/bin/./splunk bootstrap shcluster-captain -servers_list "https://15.206.209.236:8089,https://13.235.86.11:8089" -auth admin:shubham123
 
