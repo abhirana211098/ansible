@@ -1,14 +1,13 @@
 - hosts: depl
   tasks:
-     - name: Copy using inline content
-       become: yes
-       become_user: root    
-       blockinfile:
-         path: /opt/splunk/etc/system/local/server.conf
-         block: |
-            [shclustering]
-            pass4SymmKey = 12345678
-            shcluster_label = cluster1
+    - name: enable the clustering in deployer
+      copy: 
+          dest: /opt/splunk/etc/system/local/server.conf
+          content: |
+             [shclustering]
+             shcluster_label = shcluster1
+             pass4SymmKey = admin123    
+  
 
      - name: restart
        become: yes
